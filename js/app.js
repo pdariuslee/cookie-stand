@@ -12,17 +12,44 @@
 // -------------- Object/s --------------
 
 
+
 var Seattle =  {
 
   storeHours : ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
-  numberOfCustomerPerHour : [],
-  numberofCookiesBought : [],
   minCustomers : 0,
   maxCustomers : 0,
+  storeInfo : ['Seattle', 'min cust', 'max cust', 'avg cookie'],
+  numberOfCustomerPerHour : [],
+  numberofCookiesBought : [],
   averageCookiesPerCustomer : 0,
   storeNumberofHours : 14,
   rangeNumberForCustomer : 30,
   rangeNumberForPurchaseCookies : 30,
+  tableColumns : 4,
+  location: 'Seattle',
+
+  showLocationInfo : function() {
+      
+    
+          // var parent = document.getElementById('allLocationsTable');
+          // var child = document.createElement('tr');
+          // child.textContent = '<td>' + Seattle + '</td>' 
+          //                   + '<td>' + 'another one' + '</td>'
+          //                   + '<td>' + 'another one' + '</td>'  
+          //                   + '<td>' + 'another one' + '<td>';
+          // parent.appendChild(child);
+
+          for(var i = 0; i < this.storeInfo.length; i++){
+
+            var parent = document.getElementById('allSeattle');
+            var child = document.createElement('td');
+            child.textContent = this.storeInfo[i];
+            parent.appendChild(child);
+      
+            }
+    
+    
+  },
   
   // Codes below are from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
   // generates random number for the array numberOfCustomerPerHour
@@ -42,7 +69,7 @@ var Seattle =  {
       
     }
 
-    console.log('No. of Customers per hour: ' + this.numberOfCustomerPerHour);
+    // console.log('No. of Customers per hour: ' + this.numberOfCustomerPerHour);
 
   },
 
@@ -70,7 +97,8 @@ var Seattle =  {
   getMaxCustomers : function (){
 
     this.maxCustomers = Math.max(...this.numberOfCustomerPerHour);
-    console.log('Max Customers: ' + this.maxCustomers);
+    this.storeInfo[2] = this.maxCustomers;
+    // console.log('Max Customers: ' + this.maxCustomers);
   
     },
 
@@ -79,7 +107,8 @@ var Seattle =  {
 
   
     this.minCustomers = Math.min(...this.numberOfCustomerPerHour);
-    console.log('Min Customers: ' + this.minCustomers);
+    this.storeInfo[1] = this.minCustomers;
+    // console.log('Min Customers: ' + this.minCustomers);
 
     },
 
@@ -92,7 +121,7 @@ var Seattle =  {
       
     }
 
-    console.log('Avg number of cookies per customer per hour: ' + this.numberofCookiesBought);
+    // console.log('Avg number of cookies per customer per hour: ' + this.numberofCookiesBought);
 
     },
 
@@ -102,10 +131,10 @@ var Seattle =  {
       for(var i = 0; i < this.numberofCookiesBought.length; i++){
 
        totalCookies += this.numberofCookiesBought[i];
-
+       this.storeInfo[3] = totalCookies / this.numberofCookiesBought.length;
       }
 
-      console.log(totalCookies);
+      // console.log(totalCookies);
 
 
   }
@@ -114,6 +143,8 @@ var Seattle =  {
 
 
 // Sequence of Program
+
+
 
 Seattle.getCustomersPerHour();
 
@@ -127,20 +158,47 @@ Seattle.listOfCookiesPerHour();
 
 Seattle.getTotalCookies();
 
+Seattle.showLocationInfo();
 
 
-// ----------- Tokyo -----------
+
 var Tokyo =  {
 
   storeHours : ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
-  numberOfCustomerPerHour : [],
-  numberofCookiesBought : [],
   minCustomers : 0,
   maxCustomers : 0,
+  storeInfo : ['Tokyo', 'min cust', 'max cust', 'avg cookie'],
+  numberOfCustomerPerHour : [],
+  numberofCookiesBought : [],
   averageCookiesPerCustomer : 0,
   storeNumberofHours : 14,
   rangeNumberForCustomer : 30,
   rangeNumberForPurchaseCookies : 30,
+  tableColumns : 4,
+  location: 'Tokyo',
+
+  showLocationInfo : function() {
+      
+    
+          // var parent = document.getElementById('allLocationsTable');
+          // var child = document.createElement('tr');
+          // child.textContent = '<td>' + Seattle + '</td>' 
+          //                   + '<td>' + 'another one' + '</td>'
+          //                   + '<td>' + 'another one' + '</td>'  
+          //                   + '<td>' + 'another one' + '<td>';
+          // parent.appendChild(child);
+
+          for(var i = 0; i < this.storeInfo.length; i++){
+
+            var parent = document.getElementById('allTokyo');
+            var child = document.createElement('td');
+            child.textContent = this.storeInfo[i];
+            parent.appendChild(child);
+      
+            }
+    
+    
+  },
   
   // Codes below are from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
   // generates random number for the array numberOfCustomerPerHour
@@ -160,7 +218,7 @@ var Tokyo =  {
       
     }
 
-    console.log('No. of Customers per hour: ' + this.numberOfCustomerPerHour);
+    // console.log('No. of Customers per hour: ' + this.numberOfCustomerPerHour);
 
   },
 
@@ -188,7 +246,8 @@ var Tokyo =  {
   getMaxCustomers : function (){
 
     this.maxCustomers = Math.max(...this.numberOfCustomerPerHour);
-    console.log('Max Customers: ' + this.maxCustomers);
+    this.storeInfo[2] = this.maxCustomers;
+    // console.log('Max Customers: ' + this.maxCustomers);
   
     },
 
@@ -197,7 +256,8 @@ var Tokyo =  {
 
   
     this.minCustomers = Math.min(...this.numberOfCustomerPerHour);
-    console.log('Min Customers: ' + this.minCustomers);
+    this.storeInfo[1] = this.minCustomers;
+    // console.log('Min Customers: ' + this.minCustomers);
 
     },
 
@@ -210,7 +270,7 @@ var Tokyo =  {
       
     }
 
-    console.log('Avg number of cookies per customer per hour: ' + this.numberofCookiesBought);
+    // console.log('Avg number of cookies per customer per hour: ' + this.numberofCookiesBought);
 
     },
 
@@ -220,10 +280,10 @@ var Tokyo =  {
       for(var i = 0; i < this.numberofCookiesBought.length; i++){
 
        totalCookies += this.numberofCookiesBought[i];
-
+       this.storeInfo[3] = totalCookies / this.numberofCookiesBought.length;
       }
 
-      console.log(totalCookies);
+      // console.log(totalCookies);
 
 
   }
@@ -244,20 +304,47 @@ Tokyo.listOfCookiesPerHour();
 
 Tokyo.getTotalCookies();
 
+Tokyo.showLocationInfo();
+
 
 
 // ----------- Dubai -----------
 var Dubai =  {
 
   storeHours : ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
-  numberOfCustomerPerHour : [],
-  numberofCookiesBought : [],
   minCustomers : 0,
   maxCustomers : 0,
+  storeInfo : ['Dubai', 'min cust', 'max cust', 'avg cookie'],
+  numberOfCustomerPerHour : [],
+  numberofCookiesBought : [],
   averageCookiesPerCustomer : 0,
   storeNumberofHours : 14,
   rangeNumberForCustomer : 30,
   rangeNumberForPurchaseCookies : 30,
+  tableColumns : 4,
+
+  showLocationInfo : function() {
+      
+    
+          // var parent = document.getElementById('allLocationsTable');
+          // var child = document.createElement('tr');
+          // child.textContent = '<td>' + Seattle + '</td>' 
+          //                   + '<td>' + 'another one' + '</td>'
+          //                   + '<td>' + 'another one' + '</td>'  
+          //                   + '<td>' + 'another one' + '<td>';
+          // parent.appendChild(child);
+
+          for(var i = 0; i < this.storeInfo.length; i++){
+
+            var parent = document.getElementById('allDubai');
+            var child = document.createElement('td');
+            child.textContent = this.storeInfo[i];
+            parent.appendChild(child);
+      
+            }
+    
+    
+  },
   
   // Codes below are from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
   // generates random number for the array numberOfCustomerPerHour
@@ -277,7 +364,7 @@ var Dubai =  {
       
     }
 
-    console.log('No. of Customers per hour: ' + this.numberOfCustomerPerHour);
+    // console.log('No. of Customers per hour: ' + this.numberOfCustomerPerHour);
 
   },
 
@@ -305,7 +392,8 @@ var Dubai =  {
   getMaxCustomers : function (){
 
     this.maxCustomers = Math.max(...this.numberOfCustomerPerHour);
-    console.log('Max Customers: ' + this.maxCustomers);
+    this.storeInfo[2] = this.maxCustomers;
+    // console.log('Max Customers: ' + this.maxCustomers);
   
     },
 
@@ -314,7 +402,8 @@ var Dubai =  {
 
   
     this.minCustomers = Math.min(...this.numberOfCustomerPerHour);
-    console.log('Min Customers: ' + this.minCustomers);
+    this.storeInfo[1] = this.minCustomers;
+    // console.log('Min Customers: ' + this.minCustomers);
 
     },
 
@@ -327,7 +416,7 @@ var Dubai =  {
       
     }
 
-    console.log('Avg number of cookies per customer per hour: ' + this.numberofCookiesBought);
+    // console.log('Avg number of cookies per customer per hour: ' + this.numberofCookiesBought);
 
     },
 
@@ -337,10 +426,10 @@ var Dubai =  {
       for(var i = 0; i < this.numberofCookiesBought.length; i++){
 
        totalCookies += this.numberofCookiesBought[i];
-
+       this.storeInfo[3] = totalCookies / this.numberofCookiesBought.length;
       }
 
-      console.log(totalCookies);
+      // console.log(totalCookies);
 
 
   }
@@ -361,6 +450,8 @@ Dubai.listOfCookiesPerHour();
 
 Dubai.getTotalCookies();
 
+Dubai.showLocationInfo();
+
 
 
 // ----------- Paris -----------
@@ -368,14 +459,39 @@ Dubai.getTotalCookies();
 var Paris =  {
 
   storeHours : ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
-  numberOfCustomerPerHour : [],
-  numberofCookiesBought : [],
   minCustomers : 0,
   maxCustomers : 0,
+  storeInfo : ['Paris', 'min cust', 'max cust', 'avg cookie'],
+  numberOfCustomerPerHour : [],
+  numberofCookiesBought : [],
   averageCookiesPerCustomer : 0,
   storeNumberofHours : 14,
   rangeNumberForCustomer : 30,
   rangeNumberForPurchaseCookies : 30,
+  tableColumns : 4,
+
+  showLocationInfo : function() {
+      
+    
+          // var parent = document.getElementById('allLocationsTable');
+          // var child = document.createElement('tr');
+          // child.textContent = '<td>' + Seattle + '</td>' 
+          //                   + '<td>' + 'another one' + '</td>'
+          //                   + '<td>' + 'another one' + '</td>'  
+          //                   + '<td>' + 'another one' + '<td>';
+          // parent.appendChild(child);
+
+          for(var i = 0; i < this.storeInfo.length; i++){
+
+            var parent = document.getElementById('allParis');
+            var child = document.createElement('td');
+            child.textContent = this.storeInfo[i];
+            parent.appendChild(child);
+      
+            }
+    
+    
+  },
   
   // Codes below are from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
   // generates random number for the array numberOfCustomerPerHour
@@ -395,7 +511,7 @@ var Paris =  {
       
     }
 
-    console.log('No. of Customers per hour: ' + this.numberOfCustomerPerHour);
+    // console.log('No. of Customers per hour: ' + this.numberOfCustomerPerHour);
 
   },
 
@@ -423,7 +539,8 @@ var Paris =  {
   getMaxCustomers : function (){
 
     this.maxCustomers = Math.max(...this.numberOfCustomerPerHour);
-    console.log('Max Customers: ' + this.maxCustomers);
+    this.storeInfo[2] = this.maxCustomers;
+    // console.log('Max Customers: ' + this.maxCustomers);
   
     },
 
@@ -432,7 +549,8 @@ var Paris =  {
 
   
     this.minCustomers = Math.min(...this.numberOfCustomerPerHour);
-    console.log('Min Customers: ' + this.minCustomers);
+    this.storeInfo[1] = this.minCustomers;
+    // console.log('Min Customers: ' + this.minCustomers);
 
     },
 
@@ -445,7 +563,7 @@ var Paris =  {
       
     }
 
-    console.log('Avg number of cookies per customer per hour: ' + this.numberofCookiesBought);
+    // console.log('Avg number of cookies per customer per hour: ' + this.numberofCookiesBought);
 
     },
 
@@ -455,10 +573,10 @@ var Paris =  {
       for(var i = 0; i < this.numberofCookiesBought.length; i++){
 
        totalCookies += this.numberofCookiesBought[i];
-
+       this.storeInfo[3] = totalCookies / this.numberofCookiesBought.length;
       }
 
-      console.log(totalCookies);
+      // console.log(totalCookies);
 
 
   }
@@ -479,6 +597,8 @@ Paris.listOfCookiesPerHour();
 
 Paris.getTotalCookies();
 
+Paris.showLocationInfo();
+
 
 
 // ----------- Lima -----------
@@ -486,14 +606,39 @@ Paris.getTotalCookies();
 var Lima =  {
 
   storeHours : ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
-  numberOfCustomerPerHour : [],
-  numberofCookiesBought : [],
   minCustomers : 0,
   maxCustomers : 0,
+  storeInfo : ['Lima', 'min cust', 'max cust', 'avg cookie'],
+  numberOfCustomerPerHour : [],
+  numberofCookiesBought : [],
   averageCookiesPerCustomer : 0,
   storeNumberofHours : 14,
   rangeNumberForCustomer : 30,
   rangeNumberForPurchaseCookies : 30,
+  tableColumns : 4,
+
+  showLocationInfo : function() {
+      
+    
+          // var parent = document.getElementById('allLocationsTable');
+          // var child = document.createElement('tr');
+          // child.textContent = '<td>' + Seattle + '</td>' 
+          //                   + '<td>' + 'another one' + '</td>'
+          //                   + '<td>' + 'another one' + '</td>'  
+          //                   + '<td>' + 'another one' + '<td>';
+          // parent.appendChild(child);
+
+          for(var i = 0; i < this.storeInfo.length; i++){
+
+            var parent = document.getElementById('allLima');
+            var child = document.createElement('td');
+            child.textContent = this.storeInfo[i];
+            parent.appendChild(child);
+      
+            }
+    
+    
+  },
   
   // Codes below are from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
   // generates random number for the array numberOfCustomerPerHour
@@ -513,7 +658,7 @@ var Lima =  {
       
     }
 
-    console.log('No. of Customers per hour: ' + this.numberOfCustomerPerHour);
+    // console.log('No. of Customers per hour: ' + this.numberOfCustomerPerHour);
 
   },
 
@@ -541,7 +686,8 @@ var Lima =  {
   getMaxCustomers : function (){
 
     this.maxCustomers = Math.max(...this.numberOfCustomerPerHour);
-    console.log('Max Customers: ' + this.maxCustomers);
+    this.storeInfo[2] = this.maxCustomers;
+    // console.log('Max Customers: ' + this.maxCustomers);
   
     },
 
@@ -550,7 +696,8 @@ var Lima =  {
 
   
     this.minCustomers = Math.min(...this.numberOfCustomerPerHour);
-    console.log('Min Customers: ' + this.minCustomers);
+    this.storeInfo[1] = this.minCustomers;
+    // console.log('Min Customers: ' + this.minCustomers);
 
     },
 
@@ -563,7 +710,7 @@ var Lima =  {
       
     }
 
-    console.log('Avg number of cookies per customer per hour: ' + this.numberofCookiesBought);
+    // console.log('Avg number of cookies per customer per hour: ' + this.numberofCookiesBought);
 
     },
 
@@ -573,10 +720,10 @@ var Lima =  {
       for(var i = 0; i < this.numberofCookiesBought.length; i++){
 
        totalCookies += this.numberofCookiesBought[i];
-
+       this.storeInfo[3] = totalCookies / this.numberofCookiesBought.length;
       }
 
-      console.log(totalCookies);
+      // console.log(totalCookies);
 
 
   }
@@ -596,3 +743,5 @@ Lima.getAverageCookiesBought();
 Lima.listOfCookiesPerHour();
 
 Lima.getTotalCookies();
+
+Lima.showLocationInfo();
