@@ -52,7 +52,7 @@ function CookieStore(location, min, max, averageCookiesPerCustomer) {
 
     for(var i = 0; i < 14; i++){
 
-      this.cookiesPurchasedPerHour[i] = this.averageCookiesPerCustomer * this.getRandomNumberOfCustomerPerHour(this.min, this.max);
+      this.cookiesPurchasedPerHour[i] = Math.round(this.averageCookiesPerCustomer) * this.getRandomNumberOfCustomerPerHour(this.min, this.max);
       
     }
     
@@ -151,19 +151,19 @@ function cookieStandFooter(){
 // Sequence
 cookieStandHeader();
 
-var Seattle = new CookieStore('Seattle', 5, 10, 2);
+var Seattle = new CookieStore('Seattle', 23, 65, 6.3);
 Seattle.displayStoreLocation();
 
-var Tokyo = new CookieStore('Tokyo', 5, 10, 2);
+var Tokyo = new CookieStore('Tokyo', 3, 24, 1.2);
 Tokyo.displayStoreLocation();
 
-var Dubai = new CookieStore('Dubai', 5, 10, 2);
+var Dubai = new CookieStore('Dubai', 11, 38, 3.7);
 Dubai.displayStoreLocation();
 
-var Paris = new CookieStore('Paris', 5, 10, 2);
+var Paris = new CookieStore('Paris', 20, 38, 2.3);
 Paris.displayStoreLocation();
 
-var Lima = new CookieStore('Lima', 5, 10, 2);
+var Lima = new CookieStore('Lima', 2, 16, 4.6);
 Lima.displayStoreLocation();
 
 cookieStandFooter();
