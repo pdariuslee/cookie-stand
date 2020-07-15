@@ -1,4 +1,4 @@
-'strict'
+'use strict'
 
 // --------------Store Locations--------------
 // Seattle
@@ -13,9 +13,9 @@
 
 var Seattle =  {
 
-  minCustomers : 2,
-  maxCustomers : 10,
-  averageCookiesPerCustomer : 7,
+  minCustomers : 23,
+  maxCustomers : 65,
+  averageCookiesPerCustomer : 6.3,
   cookiesPurchasedPerHour : [],
   storeHours : ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'],
   storeInfoSummary : ['Seattle', this.minCustomers, this.maxCustomers, this.averageCookiesPerCustomer],
@@ -44,7 +44,7 @@ var Seattle =  {
 
       var parent = document.getElementById('seattleCookiesPurchasedPerHour');
       var child = document.createElement('li');
-      child.textContent = this.storeHours[i] + ': ' + this.cookiesPurchasedPerHour[i] + ' cookies';
+      child.textContent = this.storeHours[i] + ': ' + Math.round(this.cookiesPurchasedPerHour[i])  + ' cookies';
       parent.appendChild(child);
 
       }
@@ -61,7 +61,7 @@ var Seattle =  {
 
     var parent = document.getElementById('seattleCookiesPurchasedPerHour');
     var child = document.createElement('li');
-    child.textContent = 'Total: ' + totalCookiesPurchased + ' cookies';
+    child.textContent = 'Total: ' + Math.round(totalCookiesPurchased) + ' cookies';
     parent.appendChild(child);
 
   },
@@ -106,8 +106,8 @@ var Seattle =  {
 var Tokyo =  {
 
   minCustomers : 3,
-  maxCustomers : 11,
-  averageCookiesPerCustomer : 5,
+  maxCustomers : 24,
+  averageCookiesPerCustomer : 1.2,
   cookiesPurchasedPerHour : [],
   storeHours : ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'],
   storeInfoSummary : ['Tokyo', this.minCustomers, this.maxCustomers, this.averageCookiesPerCustomer],
@@ -136,7 +136,7 @@ var Tokyo =  {
 
       var parent = document.getElementById('tokyoCookiesPurchasedPerHour');
       var child = document.createElement('li');
-      child.textContent = this.storeHours[i] + ': ' + this.cookiesPurchasedPerHour[i] + ' cookies';
+      child.textContent = this.storeHours[i] + ': ' + Math.round(this.cookiesPurchasedPerHour[i]) + ' cookies';
       parent.appendChild(child);
 
       }
@@ -153,7 +153,7 @@ var Tokyo =  {
 
     var parent = document.getElementById('tokyoCookiesPurchasedPerHour');
     var child = document.createElement('li');
-    child.textContent = 'Total: ' + totalCookiesPurchased + ' cookies';
+    child.textContent = 'Total: ' + Math.round(totalCookiesPurchased) + ' cookies';
     parent.appendChild(child);
 
   },
@@ -197,9 +197,9 @@ var Tokyo =  {
 
 var Dubai =  {
 
-  minCustomers : 6,
-  maxCustomers : 12,
-  averageCookiesPerCustomer : 9,
+  minCustomers :11,
+  maxCustomers : 38,
+  averageCookiesPerCustomer : 3.7,
   cookiesPurchasedPerHour : [],
   storeHours : ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'],
   storeInfoSummary : ['Dubai', this.minCustomers, this.maxCustomers, this.averageCookiesPerCustomer],
@@ -228,7 +228,7 @@ var Dubai =  {
 
       var parent = document.getElementById('dubaiCookiesPurchasedPerHour');
       var child = document.createElement('li');
-      child.textContent = this.storeHours[i] + ': ' + this.cookiesPurchasedPerHour[i] + ' cookies';
+      child.textContent = this.storeHours[i] + ': ' + Math.round(this.cookiesPurchasedPerHour[i]) + ' cookies';
       parent.appendChild(child);
 
       }
@@ -245,7 +245,7 @@ var Dubai =  {
 
     var parent = document.getElementById('dubaiCookiesPurchasedPerHour');
     var child = document.createElement('li');
-    child.textContent = 'Total: ' + totalCookiesPurchased + ' cookies';
+    child.textContent = 'Total: ' + Math.round(totalCookiesPurchased) + ' cookies';
     parent.appendChild(child);
 
   },
@@ -289,9 +289,9 @@ var Dubai =  {
 
 var Paris =  {
 
-  minCustomers : 2,
-  maxCustomers : 14,
-  averageCookiesPerCustomer : 10,
+  minCustomers : 20,
+  maxCustomers : 38,
+  averageCookiesPerCustomer : 2.3,
   cookiesPurchasedPerHour : [],
   storeHours : ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'],
   storeInfoSummary : ['Paris', this.minCustomers, this.maxCustomers, this.averageCookiesPerCustomer],
@@ -320,7 +320,7 @@ var Paris =  {
 
       var parent = document.getElementById('parisCookiesPurchasedPerHour');
       var child = document.createElement('li');
-      child.textContent = this.storeHours[i] + ': ' + this.cookiesPurchasedPerHour[i] + ' cookies';
+      child.textContent = this.storeHours[i] + ': ' + Math.round(this.cookiesPurchasedPerHour[i]) + ' cookies';
       parent.appendChild(child);
 
       }
@@ -337,7 +337,7 @@ var Paris =  {
 
     var parent = document.getElementById('parisCookiesPurchasedPerHour');
     var child = document.createElement('li');
-    child.textContent = 'Total: ' + totalCookiesPurchased + ' cookies';
+    child.textContent = 'Total: ' + Math.round(totalCookiesPurchased) + ' cookies';
     parent.appendChild(child);
 
   },
@@ -381,8 +381,8 @@ var Paris =  {
 var Lima =  {
 
   minCustomers : 2,
-  maxCustomers : 8,
-  averageCookiesPerCustomer : 15,
+  maxCustomers : 16,
+  averageCookiesPerCustomer : 4.6,
   cookiesPurchasedPerHour : [],
   storeHours : ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'],
   storeInfoSummary : ['Lima', this.minCustomers, this.maxCustomers, this.averageCookiesPerCustomer],
@@ -411,7 +411,7 @@ var Lima =  {
 
       var parent = document.getElementById('limaCookiesPurchasedPerHour');
       var child = document.createElement('li');
-      child.textContent = this.storeHours[i] + ': ' + this.cookiesPurchasedPerHour[i] + ' cookies';
+      child.textContent = this.storeHours[i] + ': ' + Math.round(this.cookiesPurchasedPerHour[i]) + ' cookies';
       parent.appendChild(child);
 
       }
@@ -428,7 +428,7 @@ var Lima =  {
 
     var parent = document.getElementById('limaCookiesPurchasedPerHour');
     var child = document.createElement('li');
-    child.textContent = 'Total: ' + totalCookiesPurchased + ' cookies';
+    child.textContent = 'Total: ' + Math.round(totalCookiesPurchased) + ' cookies';
     parent.appendChild(child);
 
   },
