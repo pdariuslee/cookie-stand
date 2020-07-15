@@ -1,4 +1,4 @@
-'strict'
+'use strict'
 
 
 function CookieStore(location, min, max, averageCookiesPerCustomer) {
