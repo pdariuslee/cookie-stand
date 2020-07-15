@@ -1,5 +1,8 @@
+
+/* ====================================== tag selector */
+
 body{
-  background-color: orange;
+  background-color: #ffeadb;
 }
 
 table, th, td{
@@ -8,9 +11,45 @@ table, th, td{
   border-collapse: collapse;
 }
 
-#logo{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+header{
+  background-color: #679b9b;
+  width: 80%;
+  height: 100px;
+  margin: 0 auto;
 }
+
+main{
+  background-color: #ff9a76;
+}
+
+header > nav > ul > li{
+
+  /* border: 5px solid red; */
+  float: left;
+  margin-top: 3%;
+  margin-left: 10%;
+}
+
+header > nav > ul{
+
+  border: 5px solid red;
+  float: left;
+  margin-top: 3%;
+  margin-left: 80%;
+}
+
+/* ====================================== id */
+
+#logo{
+  /* border: 5px solid red; */
+  float: left;
+  margin-top: 1%;
+  margin-left: 1%;
+  width: 5%;
+  /* height: 5%; */
+}
+
+
+
+/* ====================================== class */
+
