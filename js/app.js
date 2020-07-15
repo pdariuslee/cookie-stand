@@ -73,31 +73,29 @@ function CookieStore(location, min, max, averageCookiesPerCustomer) {
 }
 
 function cookieStandHeader(){
-
-  this.storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
-  this.storeCaption = 'Store'; 
-  this.cookiesPurchasedPerHourCaption = 'Daily Location Total'; 
-
+  var cookiesPurchasedPerHourCaption = 'Daily Location Total'; 
+  var storeCaption = 'Store'; 
+  var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
   var table = document.getElementById('allStoreInfoSummary');
   var row = document.createElement('tr');
 
 //store label
   var tableDataCell = document.createElement('th');
-  tableDataCell.textContent = this.storeCaption;
+  tableDataCell.textContent = storeCaption;
   row.appendChild(tableDataCell);
 
   //Shows store locations
   for(var i = 0; i < 14; i++){
 
     var tableDataCell = document.createElement('th');
-    tableDataCell.textContent = this.storeHours[i];
+    tableDataCell.textContent = storeHours[i];
     row.appendChild(tableDataCell);
 
   }
 
 //daily location total label
   var tableDataCell = document.createElement('th');
-  tableDataCell.textContent = this.cookiesPurchasedPerHourCaption;
+  tableDataCell.textContent = cookiesPurchasedPerHourCaption;
   row.appendChild(tableDataCell);
 
 
@@ -110,36 +108,35 @@ function cookieStandHeader(){
 
 function cookieStandFooter(){
 
-  this.footerTotals = 'Totals';
-
+  var footerTotals = 'Totals';
   var table = document.getElementById('allStoreInfoSummary');
   var row = document.createElement('tr');
 
   //store label
   var tableDataCell = document.createElement('th');
-  tableDataCell.textContent = this.footerTotals;
+  tableDataCell.textContent = footerTotals;
   row.appendChild(tableDataCell);  
 
   //total of all location
-  this.totalCookiesPerHourFooter = 0;
+  var totalCookiesPerHourFooter = 0;
 
   for(var i = 0; i < 14; i++){
 
     totalCookiesPerHourFooter = Seattle.cookiesPurchasedPerHour[i] + Tokyo.cookiesPurchasedPerHour[i] + Dubai.cookiesPurchasedPerHour[i] + Paris.cookiesPurchasedPerHour[i] + Lima.cookiesPurchasedPerHour[i];
 
     var tableDataCell = document.createElement('th');
-    tableDataCell.textContent = this.totalCookiesPerHourFooter;
+    tableDataCell.textContent = totalCookiesPerHourFooter;
     row.appendChild(tableDataCell); 
 
   }
 
   //daily location total footer
-  this.totalDailyLocationFooter = 0;
+  var totalDailyLocationFooter = 0;
   totalDailyLocationFooter = Seattle.totalCookiesBought + Tokyo.totalCookiesBought + Dubai.totalCookiesBought + Paris.totalCookiesBought + Lima.totalCookiesBought;
 
 
   var tableDataCell = document.createElement('th');
-  tableDataCell.textContent = this.totalDailyLocationFooter;
+  tableDataCell.textContent = totalDailyLocationFooter;
   row.appendChild(tableDataCell);
 
 
