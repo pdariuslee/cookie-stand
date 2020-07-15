@@ -1,4 +1,4 @@
-'strict'
+'use strict'
 
 
 function CookieStore(location, min, max, averageCookiesPerCustomer) {
@@ -53,7 +53,7 @@ function CookieStore(location, min, max, averageCookiesPerCustomer) {
 
     for(var i = 0; i < 14; i++){
 
-      this.cookiesPurchasedPerHour[i] = this.averageCookiesPerCustomer * this.getRandomNumberOfCustomerPerHour(this.min, this.max);
+      this.cookiesPurchasedPerHour[i] = Math.round(this.averageCookiesPerCustomer) * this.getRandomNumberOfCustomerPerHour(this.min, this.max);
       
     }
     
@@ -74,31 +74,29 @@ function CookieStore(location, min, max, averageCookiesPerCustomer) {
 }
 
 function cookieStandHeader(){
-
-  this.storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
-  this.storeCaption = 'Store'; 
-  this.cookiesPurchasedPerHourCaption = 'Daily Location Total'; 
-
+  var cookiesPurchasedPerHourCaption = 'Daily Location Total'; 
+  var storeCaption = 'Store'; 
+  var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
   var table = document.getElementById('allStoreInfoSummary');
   var row = document.createElement('tr');
 
 //store label
   var tableDataCell = document.createElement('th');
-  tableDataCell.textContent = this.storeCaption;
+  tableDataCell.textContent = storeCaption;
   row.appendChild(tableDataCell);
 
   //Shows store locations
   for(var i = 0; i < 14; i++){
 
     var tableDataCell = document.createElement('th');
-    tableDataCell.textContent = this.storeHours[i];
+    tableDataCell.textContent = storeHours[i];
     row.appendChild(tableDataCell);
 
   }
 
 //daily location total label
   var tableDataCell = document.createElement('th');
-  tableDataCell.textContent = this.cookiesPurchasedPerHourCaption;
+  tableDataCell.textContent = cookiesPurchasedPerHourCaption;
   row.appendChild(tableDataCell);
 
 
@@ -111,36 +109,35 @@ function cookieStandHeader(){
 
 function cookieStandFooter(){
 
-  this.footerTotals = 'Totals';
-
+  var footerTotals = 'Totals';
   var table = document.getElementById('allStoreInfoSummary');
   var row = document.createElement('tr');
 
   //store label
   var tableDataCell = document.createElement('th');
-  tableDataCell.textContent = this.footerTotals;
+  tableDataCell.textContent = footerTotals;
   row.appendChild(tableDataCell);  
 
   //total of all location
-  this.totalCookiesPerHourFooter = 0;
+  var totalCookiesPerHourFooter = 0;
 
   for(var i = 0; i < 14; i++){
 
     totalCookiesPerHourFooter = Seattle.cookiesPurchasedPerHour[i] + Tokyo.cookiesPurchasedPerHour[i] + Dubai.cookiesPurchasedPerHour[i] + Paris.cookiesPurchasedPerHour[i] + Lima.cookiesPurchasedPerHour[i];
 
     var tableDataCell = document.createElement('th');
-    tableDataCell.textContent = this.totalCookiesPerHourFooter;
+    tableDataCell.textContent = totalCookiesPerHourFooter;
     row.appendChild(tableDataCell); 
 
   }
 
   //daily location total footer
-  this.totalDailyLocationFooter = 0;
+  var totalDailyLocationFooter = 0;
   totalDailyLocationFooter = Seattle.totalCookiesBought + Tokyo.totalCookiesBought + Dubai.totalCookiesBought + Paris.totalCookiesBought + Lima.totalCookiesBought;
 
 
   var tableDataCell = document.createElement('th');
-  tableDataCell.textContent = this.totalDailyLocationFooter;
+  tableDataCell.textContent = totalDailyLocationFooter;
   row.appendChild(tableDataCell);
 
 
@@ -152,19 +149,19 @@ function cookieStandFooter(){
 // Sequence
 cookieStandHeader();
 
-var Seattle = new CookieStore('Seattle', 5, 10, 2);
+var Seattle = new CookieStore('Seattle', 23, 65, 6.3);
 Seattle.displayStoreLocation();
 
-var Tokyo = new CookieStore('Tokyo', 5, 10, 2);
+var Tokyo = new CookieStore('Tokyo', 3, 24, 1.2);
 Tokyo.displayStoreLocation();
 
-var Dubai = new CookieStore('Dubai', 5, 10, 2);
+var Dubai = new CookieStore('Dubai', 11, 38, 3.7);
 Dubai.displayStoreLocation();
 
-var Paris = new CookieStore('Paris', 5, 10, 2);
+var Paris = new CookieStore('Paris', 20, 38, 2.3);
 Paris.displayStoreLocation();
 
-var Lima = new CookieStore('Lima', 5, 10, 2);
+var Lima = new CookieStore('Lima', 2, 16, 4.6);
 Lima.displayStoreLocation();
 
 cookieStandFooter();
