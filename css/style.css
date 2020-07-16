@@ -19,37 +19,155 @@ header{
 }
 
 main{
+  /* border: 5px solid red; */
   background-color: #ff9a76;
+  width: 80%;
+  margin: 0 auto;
+}
+
+main > img:first-child {
+
+  float: left;
+  margin: auto;
+  width: 100%;
+
+}
+
+header > nav > ul{
+
+  /* border: 5px solid red; */
+  float: left;
+  margin-top: 3%;
+  margin-left: 70%;
+  width: 15%;
 }
 
 header > nav > ul > li{
 
   /* border: 5px solid red; */
   float: left;
-  margin-top: 3%;
-  margin-left: 10%;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style: none;
+  /* margin-top: 3%; */
+  margin-left: 15%;
+  
+  
 }
 
-header > nav > ul{
+header > nav > ul > li > a{
+  color: #ff9a76;
+  font-size: 30px;
 
-  border: 5px solid red;
-  float: left;
-  margin-top: 3%;
-  margin-left: 80%;
+}
+/* unvisited link */
+a:link {
+  color: ff9a76;
+  text-decoration: none;
+
 }
 
+/* visited link */
+a:visited {
+  color: ff9a76;
+  text-decoration: none;
+
+}
+
+a:hover {
+  color: #eeeeee;
+}
+
+/* selected link */
+a:active {
+  text-decoration: underline;
+}
+
+footer{
+  width: 80%;
+  height: 100px;
+  margin: 0 auto;
+}
 /* ====================================== id */
 
 #logo{
   /* border: 5px solid red; */
   float: left;
   margin-top: 1%;
-  margin-left: 1%;
+  margin-left: 5%;
   width: 5%;
   /* height: 5%; */
 }
 
 
+#locationCaption{
+  float: left;
+  margin-left: 40%;
+  width: 100%;
+  font-size: 30px;
+}
 
+#merchCaption{
+  float: left;
+  margin-left: 42.5%;
+  width: 100%;
+  font-size: 40px;
+
+}
+
+#copyrights{
+  float: left;
+  margin: 2.5% auto;
+  width: 100%;
+  text-align: center;
+}
+
+#footerContainer{
+  float: left;
+  margin: 10% auto;
+  text-align: center;
+  width: 100%;
+}
+
+#merch > img {
+  width: 250px;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+#footerLogo{
+  width: 20%;
+}
+
+#allStoreInfoSummary {
+  float: left;
+  margin-left: 32%;
+  padding: 20%;
+
+}
+
+#storeName{
+  margin: 30px auto;
+  width: 50%;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 70px;
+  
+}
+
+#salesCaption{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 150px;
+}
 /* ====================================== class */
 
+.locations {
+
+    /* border: 1px solid red; */
+    float: left;
+    width: 15%;
+    margin-right: 2%;
+    margin-left: 3%;
+
+
+}
