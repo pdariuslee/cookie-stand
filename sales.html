@@ -17,30 +17,33 @@
     </header>
     
     <h1 id="salesCaption">Sales</h1>
-    <table id="allStoreInfoSummary">
-      <!-- <tr>
-        <th>Location</th>
-        <th>Min / Cust</th>
-        <th>Max / Cust</th>
-        <th>Avg Cookie / Sale</th>
-      </tr> -->
-    </table>
 
+    <form id="storeForm">
+      
+      <fieldset>
 
-    <!-- <h1>Seattle</h1>
-    <ul id="seattleCookiesPurchasedPerHour"></ul>
+        <legend>New Store info:</legend>
 
-    <h1>Tokyo</h1>
-    <ul id="tokyoCookiesPurchasedPerHour"></ul>
+        <label for="locationName">Location</label>
+        <input name="locationName" type="text">
 
-    <h1>Dubai</h1>
-    <ul id="dubaiCookiesPurchasedPerHour"></ul>
+        <label for="minCust">Minimum Customer </label>
+        <input type="text" name="minCust">
 
-    <h1>Paris</h1>
-    <ul id="parisCookiesPurchasedPerHour"></ul>
+        <label for="maxCust">Maximum Customer </label>
+        <input type="text" name="maxCust">
 
-    <h1>Lima</h1>
-    <ul id="limaCookiesPurchasedPerHour"></ul> -->
+        <label for="avgCookiePerCust">Average Cookie Sales Per Customer </label>
+        <input type="text" name="avgCookiePerCust">
+
+        <input type="submit" value="submit">
+
+      </fieldset>
+
+    </form>
+
+    <table id="allStoreInfoSummary"></table>
+
     
 
     <script src="js/app.js"></script>
