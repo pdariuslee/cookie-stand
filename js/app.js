@@ -159,10 +159,10 @@ function cookieStandFooter(){
   row.appendChild(tableDataCell);  
 
   // total of all location
-  var totalCookiesPerHourFooter = 0;
 
   for(var i = 0; i < storeOpenHours; i++){
 
+    var totalCookiesPerHourFooter = 0;
 
     for(var store = 0; store < storesArray.length; store++){
 
