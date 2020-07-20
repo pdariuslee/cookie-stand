@@ -1,6 +1,11 @@
 
 /* ====================================== tag selector */
 
+/* * {
+  outline: 1px dotted orange;
+} */
+
+
 body{
   background-color: #ffeadb;
 }
@@ -9,6 +14,14 @@ table, th, td{
   border: 2px solid black ;
   text-align: center;
   border-collapse: collapse;
+  margin: 0 auto;
+  color: #588da8;
+  background-color: #f6acc8;
+}
+
+table {
+  width: 500px;
+  height: 300px;
 }
 
 header{
@@ -104,13 +117,21 @@ footer{
   margin-left: 40%;
   width: 100%;
   font-size: 30px;
+  /* https://fonts.google.com/specimen/Satisfy?category=Display,Handwriting&preview.size=64&preview.layout=row&sidebar.open&selection.family=Satisfy */
+  font-family: 'Satisfy', cursive;
+  color: #679b9b
+
 }
 
 #merchCaption{
   float: left;
-  margin-left: 42.5%;
   width: 100%;
-  font-size: 40px;
+  font-size: 70px;
+  /* https://fonts.google.com/specimen/Satisfy?category=Display,Handwriting&preview.size=64&preview.layout=row&sidebar.open&selection.family=Satisfy */
+  font-family: 'Satisfy', cursive;
+  text-align: center;
+  color: #679b9b
+
 
 }
 
@@ -133,7 +154,9 @@ footer{
   margin-top: 5%;
   margin-left: 5%;
   margin-bottom: 5%;
+  position: relative;
 }
+
 
 #footerLogo{
   width: 20%;
@@ -144,21 +167,28 @@ footer{
   margin-left: 32%;
   margin-bottom: 100px;
   padding: 20%;
+  font-family: Arial, Helvetica, sans-serif;
 
 }
 
 #storeName{
   margin: 30px auto;
   width: 50%;
-  font-family: 'Courier New', Courier, monospace;
+  /* https://fonts.google.com/specimen/Satisfy?category=Display,Handwriting&preview.size=64&preview.layout=row&sidebar.open&selection.family=Satisfy */
+  font-family: 'Satisfy', cursive;
   font-size: 70px;
+  text-align: center;
+  color: #679b9b;
   
 }
 
 #salesCaption{
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  /* https://fonts.google.com/specimen/Satisfy?category=Display,Handwriting&preview.size=64&preview.layout=row&sidebar.open&selection.family=Satisfy */
+  font-family: 'Satisfy', cursive;
   font-size: 100px;
+  color: #679b9b
+
 }
 
 #storeForm{
@@ -175,6 +205,7 @@ footer{
     width: 15%;
     margin-right: 2%;
     margin-left: 3%;
-
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #6f0000;
 
 }
